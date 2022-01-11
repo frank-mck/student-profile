@@ -16,7 +16,7 @@ function Students() {
     }, []);
 
   return (
-    <div className='students-container'>
+    <div data-testid='students' className='students-container'>
       {data.map(student => {
         const { id, firstName, lastName, company, email, pic, skill, grades } = student; 
 

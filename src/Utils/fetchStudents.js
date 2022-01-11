@@ -1,12 +1,13 @@
-const axios = require('axios');
+import axios from 'axios'
 
 const fetchStudents = async () => {
-  const students = await axios.get('https://api.hatchways.io/assessment/students', {
-    headers: {
-      'Content-Type': 'application/json'
-    },
-  });
-  return students.data;
+  try {
+    const students = await axios.get('https://api.hatchways.io/assessment/students');
+    return students?.data;
+  } catch(err) {
+    console.log(err)
+  }
+  
 }
 
 export default fetchStudents;

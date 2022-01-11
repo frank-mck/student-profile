@@ -1,10 +1,16 @@
-import { getByTestId, render, screen } from '@testing-library/react';
+import { getByTestId, render } from '@testing-library/react';
 import Student from './Student';
 
 test('renders a student', () => {
   render(<Student />);
   expect(getByTestId(document.documentElement, 'student')).toBeInTheDocument()
 });
+
+test('renders a students name', () => {
+  render(<Student />)
+  const students = getByTestId(document.documentElement, 'name')
+  expect(students).toBeInTheDocument();
+})
 
 test('renders a students email', () => {
   render(<Student />);

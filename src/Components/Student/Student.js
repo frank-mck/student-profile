@@ -8,7 +8,7 @@ function Student({ firstName, lastName, company, email, pic, skill, grades }) {
       </div>
 
       <div>
-        <h1>{firstName?.toUpperCase()} {lastName?.toUpperCase()}</h1>
+        <h1 data-testid='name'>{firstName?.toUpperCase()} {lastName?.toUpperCase()}</h1>
  
         <div className='student-details'>
           <span data-testid='email'>Email: {email}</span>
