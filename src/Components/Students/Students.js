@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import fetchStudents from "../Utils/fetchStudents";
-import Student from "./Student";
+import fetchStudents from "../../Utils/fetchStudents";
+import Student from "../Student/Student";
+import './Students.css'
 
 function Students() {
   const [data, setData] = useState([]);
@@ -13,24 +14,24 @@ function Students() {
 
     getData();    
     }, []);
-console.log(data)
+
   return (
-    <div>
+    <div className='students-container'>
       {data.map(student => {
         const { id, firstName, lastName, city, company, email, pic, skill, grades } = student; 
 
         return (
-        <Student 
-          key={id}
-          firstName={firstName}
-          lastName={lastName}
-          city={city}
-          company={company}
-          email={email}
-          pic={pic}
-          skill={skill}
-          grades={grades}
-        />
+          <Student 
+            key={id}
+            firstName={firstName}
+            lastName={lastName}
+            city={city}
+            company={company}
+            email={email}
+            pic={pic}
+            skill={skill}
+            grades={grades}
+          />
         )}
       )}
     </div>

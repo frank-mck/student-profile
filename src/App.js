@@ -1,5 +1,5 @@
 import './App.css';
-import TopTrumps from './Components/Students';
+import TopTrumps from './Components/Students/Students';
 
 
 function App() {

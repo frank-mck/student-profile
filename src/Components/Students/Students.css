@@ -1,0 +1,13 @@
+.students-container {
+  height: 700px;
+  width: 860px;
+  box-shadow: 1px 2px 5px rgb(184, 184, 184);
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: white;
+  border-radius: .5rem;
+}
+
+.students-container::-webkit-scrollbar {
+  display: none;
+}
