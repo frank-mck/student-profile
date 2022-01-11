@@ -18,14 +18,13 @@ function Students() {
   return (
     <div className='students-container'>
       {data.map(student => {
-        const { id, firstName, lastName, city, company, email, pic, skill, grades } = student; 
+        const { id, firstName, lastName, company, email, pic, skill, grades } = student; 
 
         return (
           <Student 
             key={id}
             firstName={firstName}
             lastName={lastName}
-            city={city}
             company={company}
             email={email}
             pic={pic}

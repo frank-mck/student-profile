@@ -1,21 +1,21 @@
 import './Student.css';
 
-function Student({ id, firstName, lastName, city, company, email, pic, skill, grades }) {
+function Student({ firstName, lastName, company, email, pic, skill, grades }) {
   return (
-    <div className='student'>
+    <div data-testid='student' className='student'>
       <div className='student-pic'>
         <img src={pic} alt="" />
       </div>
 
       <div>
-        <h1>{firstName.toUpperCase()} {lastName.toUpperCase()}</h1>
+        <h1>{firstName?.toUpperCase()} {lastName?.toUpperCase()}</h1>
  
         <div className='student-details'>
-          <span>Email: {email}</span>
-          <span>Company: {company}</span>
-          <span>Skill: {skill}</span>
-          <span>Average: {" "}
-            {grades.reduce((grade, i) => grade = parseFloat(grade) + parseFloat(i)) / grades.length}
+          <span data-testid='email'>Email: {email}</span>
+          <span data-testid='company'>Company: {company}</span>
+          <span data-testid='skill'>Skill: {skill}</span>
+          <span data-testid='average'>Average: {" "}
+            {grades?.reduce((grade, i) => grade = parseFloat(grade) + parseFloat(i)) / grades?.length}
           </span>
         </div>
         
