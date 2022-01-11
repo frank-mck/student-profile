@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import fetchStudents from "../Utils/fetchStudents";
+import Student from "./Student";
 
 function Students() {
   const [data, setData] = useState([]);
@@ -11,13 +12,26 @@ function Students() {
     }   
 
     getData();    
-    }, [])
+    }, []);
 
   return (
     <div>
-      {data.map(trump => (
-        <p key={trump.id}>{trump?.lastName}</p>
-      )
+      {data.map(student => {
+        const { id, firstName, lastName, city, company, email, pic, skill, grades } = student; 
+
+        return (
+        <Student 
+          key={id}
+          firstName={firstName}
+          lastName={lastName}
+          city={city}
+          company={company}
+          email={email}
+          pic={pic}
+          skill={skill}
+          grades={grades}
+        />
+        )}
       )}
     </div>
   )
