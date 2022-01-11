@@ -5,7 +5,17 @@ function Student({ id, firstName, lastName, city, company, email, pic, skill, gr
         <img src={pic} alt="" />
       </div>
 
-      <h2 className="student-name">{firstName} {lastName}</h2>
+      <div>
+        <h2 className="student-name">{firstName} {lastName}</h2>
+
+        <p>{email}</p>
+        <p>{company}</p>
+        <p>{skill}</p>
+        <p>Average: 
+          {grades.reduce((grade, i) => grade = parseFloat(grade) + parseFloat(i)) / grades.length}
+        </p>
+      </div>
+        
     </div>
   )
 }

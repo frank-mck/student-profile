@@ -13,7 +13,7 @@ function Students() {
 
     getData();    
     }, []);
-
+console.log(data)
   return (
     <div>
       {data.map(student => {
