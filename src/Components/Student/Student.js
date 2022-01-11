@@ -3,7 +3,7 @@ import './Student.css';
 function Student({ firstName, lastName, company, email, pic, skill, grades }) {
   return (
     <div data-testid='student' className='student'>
-      <div className='student-pic'>
+      <div data-testid='pic' className='student-pic'>
         <img src={pic} alt="" />
       </div>
 
