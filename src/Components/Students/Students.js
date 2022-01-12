@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import fetchStudents from "../../Utils/fetchStudents";
-import SearchByName from "../SearchByName";
+import SearchByName from "../SearchByName/SearchByName";
 import Student from "../Student/Student";
 import './Students.css'
 

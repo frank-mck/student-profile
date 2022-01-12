@@ -6,6 +6,9 @@
   overflow-y: scroll;
   background-color: white;
   border-radius: .5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .students-container::-webkit-scrollbar {

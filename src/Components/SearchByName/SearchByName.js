@@ -1,9 +1,13 @@
 import { useRef } from "react";
+import { useState } from "react/cjs/react.development";
+import './SearchByName.css'
 
 function SearchByName({ setStudents, students }) {
   const studentsRef = useRef(students);
+  const [string, setString] = useState('')
 
   const filterStudents = (value) => {
+    setString(value)
     studentsRef.current.push(students);
     const val = (str) => str.toUpperCase().startsWith(value.toUpperCase());
 
@@ -15,8 +19,15 @@ function SearchByName({ setStudents, students }) {
   }
   
   return (
-    <div>      
-      <input type='text' onChange={(e) => filterStudents(e.target.value)} />
+    <div className='search-by-name'>      
+      <input
+        data-testid='input-name'
+        className="name-input"
+        type='text'
+        value={string}
+        onChange={(e) => filterStudents(e.target.value)}
+        placeholder='Search by name'
+      />
     </div>
   )
 }
