@@ -1,7 +1,7 @@
 {
   "name": "student-profile-3556",
   "version": "0.1.0",
-  "private": true,  
+  "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -34,5 +34,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "web-vitals": "^2.1.3"
   }
 }

@@ -1,23 +1,24 @@
 import { useEffect, useState } from "react";
 import fetchStudents from "../../Utils/fetchStudents";
+import SearchByName from "../SearchByName";
 import Student from "../Student/Student";
 import './Students.css'
 
 function Students() {
-  const [data, setData] = useState([]);
+  const [students, setStudents] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
       const res = await fetchStudents();
-      setData(res.students);
+      setStudents(res.students);
     }   
-
-    getData();    
+    getData();      
     }, []);
 
   return (
     <div data-testid='students' className='students-container'>
-      {data.map(student => {
+      <SearchByName setStudents={setStudents} students={students} />
+      {students.map(student => {
         const { id, firstName, lastName, company, email, pic, skill, grades } = student; 
 
         return (

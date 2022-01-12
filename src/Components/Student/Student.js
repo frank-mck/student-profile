@@ -15,7 +15,7 @@ function Student({ firstName, lastName, company, email, pic, skill, grades }) {
           <span data-testid='company'>Company: {company}</span>
           <span data-testid='skill'>Skill: {skill}</span>
           <span data-testid='average'>Average: {" "}
-            {grades?.reduce((grade, i) => grade = parseFloat(grade) + parseFloat(i)) / grades?.length}
+            {grades?.reduce((grade, i) => grade = parseFloat(grade) + parseFloat(i)) / grades?.length}{'%'}
           </span>
         </div>
         
