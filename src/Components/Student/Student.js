@@ -12,7 +12,7 @@ function Student({ firstName, lastName, company, email, pic, skill, grades }) {
 
       <div>
         <h1 data-testid='name'>{firstName?.toUpperCase()} {lastName?.toUpperCase()}</h1>
- 
+
         <div className='student-details'>
           <span data-testid='email'>Email: {email}</span>
           <span data-testid='company'>Company: {company}</span>
@@ -26,13 +26,21 @@ function Student({ firstName, lastName, company, email, pic, skill, grades }) {
       
       <div className='btn-container'>
         {!showTests ? (
-          <button className='button'>&#43;</button> 
+          <button onClick={() => setShowTests(true)} className='button'>&#43;</button> 
         ) : (
-          <button className='button'>−</button>
+          <button onClick={() => setShowTests(false)} className='button'>−</button>
         )}  
-      </div>
+      </div>  
 
-  
+        {showTests && (
+        <div className='students-tests'>
+          {grades.map((score, index) => (
+            <span className='students-grade' key={index}>
+              Test {index+1}: {score + "%"}
+            </span>
+          ))}
+        </div>
+      )}     
     </div>
   )
 }

@@ -1,9 +1,9 @@
 .student {
   display: grid;
-  width: 100%;
+  width: 860px;
   border-bottom: 1px solid rgb(179, 179, 179);
   grid-template-columns: 13rem 1fr 1fr;
-  align-items: center;
+  grid-template-rows: 1fr ;
 }
 
 .student-pic {
@@ -16,6 +16,7 @@
   justify-content: center;
   overflow: hidden;
   margin: 1.5rem;
+  
 }
 
 .student-pic img {
@@ -45,6 +46,7 @@
   background-color: transparent;
   cursor: pointer;
   margin-right: .5rem;
+
 }
 
 .btn-container {
@@ -52,4 +54,19 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
+}
+
+.students-tests {
+  height: 200px;
+  width: 13rem;
+  grid-area: 2/2;
+  padding-left: 1rem;
+}
+
+.students-grade {
+  font-size: 1.1rem;
+  color: grey;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
 }
