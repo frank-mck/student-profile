@@ -18,7 +18,7 @@ function Students() {
   return (
     <div data-testid='students' className='students-container'>
       <SearchByName setStudents={setStudents} students={students} />
-      {students.map(student => {
+      {students?.map(student => {
         const { id, firstName, lastName, company, email, pic, skill, grades } = student; 
 
         return (

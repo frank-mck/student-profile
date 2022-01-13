@@ -1,35 +1,18 @@
+import { waitFor, render } from '@testing-library/react';
 import axios from 'axios';
-import fetchStudents from "./fetchStudents";
+import Students from '../Components/Students/Students';
 
 jest.mock("axios");
 
 describe("fetchStudents", () => {
   const BASE_URL = 'https://api.hatchways.io/assessment/students';
 
-    test("should return students", async () => {   
-      axios.get.mockImplementationOnce(() => Promise.resolve({
-        data: {
-          students: ['INGABERG ORTON', 'CLARKE BOARDS']
-        }
-      }));
-
-      const result = await fetchStudents();
-
-      expect(axios.get).toHaveBeenCalledWith(BASE_URL);
-      expect(result.students).toEqual(['INGABERG ORTON', 'CLARKE BOARDS']);
-    });
-
- 
-    test("should return empty students list", async () => {
-      axios.get.mockImplementationOnce(() => Promise.resolve({
-        data: {
-          students: []
-        }
-      }));
-  
-      const result = await fetchStudents();
-
-      expect(axios.get).toHaveBeenCalledWith(BASE_URL);
-      expect(result.students).toEqual([]);
-    });
+    test("Makes a call to the students api", async () => {    
+      axios.get.mockResolvedValueOnce({ data: []})
+      render(<Students />)
+      
+      await waitFor(() => {
+        expect(axios.get).toHaveBeenCalledWith(BASE_URL);
+      })
+    }); 
 });

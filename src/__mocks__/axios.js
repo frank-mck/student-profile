@@ -1,3 +1,3 @@
 export default {
-  get: jest.fn(() => Promise.resolve({ data: { students: [] } }))
+  get: jest.fn().mockResolvedValue()
 };
