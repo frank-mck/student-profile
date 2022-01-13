@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import AddTag from '../AddTag';
 import './Student.css';
 
 function Student({ firstName, lastName, company, email, pic, skill, grades }) {
@@ -20,7 +21,7 @@ function Student({ firstName, lastName, company, email, pic, skill, grades }) {
           <span data-testid='average'>Average: {" "}
             {grades?.reduce((grade, i) => grade = parseFloat(grade) + parseFloat(i)) / grades?.length}{'%'}
           </span>
-          <input type='text' placeholder='Add a tag' className='add-tag-input' />
+          <AddTag />
         </div>
         
       </div>
