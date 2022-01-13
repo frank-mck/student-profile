@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import fetchStudents from "../../Utils/fetchStudents";
 import SearchByName from "../SearchByName/SearchByName";
+import SearchByTag from "../SearchByTag";
 import Student from "../Student/Student";
 import './Students.css'
 
@@ -18,6 +19,7 @@ function Students() {
   return (
     <div data-testid='students' className='students-container'>
       <SearchByName setStudents={setStudents} students={students} />
+      <SearchByTag setStudents={setStudents} students={students} />
       {students?.map(student => {
         const { id, firstName, lastName, company, email, pic, skill, grades } = student; 
 

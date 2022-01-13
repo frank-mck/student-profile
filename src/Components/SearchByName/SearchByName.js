@@ -9,7 +9,7 @@ function SearchByName({ setStudents, students }) {
   const filterStudents = (value) => {
     setString(value)
     studentsRef.current.push(students);
-    const val = (str) => str.toUpperCase().startsWith(value.toUpperCase());
+    const val = (str) => str?.toUpperCase().startsWith(value.toUpperCase());
 
     const filtered = studentsRef.current[0].filter(student => {  
       return val(student.firstName) || val(student.lastName);
