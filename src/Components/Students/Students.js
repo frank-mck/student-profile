@@ -18,8 +18,13 @@ function Students() {
 
   return (
     <div data-testid='students' className='students-container'>
-      <SearchByName setStudents={setStudents} students={students} />
-      <SearchByTag setStudents={setStudents} students={students} />
+
+      <div className="search-inputs-container">
+        <SearchByName setStudents={setStudents} students={students} />
+        <SearchByTag setStudents={setStudents} students={students} />
+      </div>      
+
+      <div className="students">
       {students?.map(student => {
         const { id, firstName, lastName, company, email, pic, skill, grades } = student; 
 
@@ -36,6 +41,7 @@ function Students() {
           />
         )}
       )}
+      </div>
     </div>
   )
 }

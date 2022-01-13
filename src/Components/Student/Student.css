@@ -78,7 +78,7 @@
   border: none;
   border-bottom: 2px solid rgb(179, 179, 179);
   padding-bottom: .6rem;
-  margin-top: .5rem;
+  margin: .5rem 0;
   font-size: 1.1rem;
   color: grey;
   outline: none;

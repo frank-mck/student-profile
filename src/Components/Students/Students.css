@@ -14,3 +14,13 @@
 .students-container::-webkit-scrollbar {
   display: none;
 }
+
+.students {
+  margin-top: 8rem;
+}
+
+.search-inputs-container {
+  position: fixed;
+  z-index: 5;
+  background-color: white;
+}
