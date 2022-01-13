@@ -46,7 +46,10 @@
   background-color: transparent;
   cursor: pointer;
   margin-right: .5rem;
+}
 
+.button:hover {
+  color: black;
 }
 
 .btn-container {
@@ -69,4 +72,20 @@
   display: flex;
   flex-direction: column;
   gap: .2rem;
+}
+
+.add-tag-input {
+  border: none;
+  border-bottom: 2px solid rgb(179, 179, 179);
+  padding-bottom: .6rem;
+  margin-top: .5rem;
+  font-size: 1.1rem;
+  color: grey;
+  outline: none;
+  transition: all .1s ease-in-out;
+}
+
+.add-tag-input:focus {
+  
+  border-bottom: 2px solid rgb(0, 0, 0);
 }
