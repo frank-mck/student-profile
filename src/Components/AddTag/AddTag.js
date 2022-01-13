@@ -1,8 +1,11 @@
-import { useState } from "react"
+import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { tagsState } from "../../atoms/tagsState";
+import './AddTag.css'
 
 function AddTag() {
   const [tag, setTag] = useState('');
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useRecoilState(tagsState);
   
   const addTags = (e) => {
     e.preventDefault();

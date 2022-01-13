@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import AddTag from '../AddTag';
+import AddTag from '../AddTag/AddTag';
 import './Student.css';
 
 function Student({ firstName, lastName, company, email, pic, skill, grades }) {
@@ -21,6 +21,16 @@ function Student({ firstName, lastName, company, email, pic, skill, grades }) {
           <span data-testid='average'>Average: {" "}
             {grades?.reduce((grade, i) => grade = parseFloat(grade) + parseFloat(i)) / grades?.length}{'%'}
           </span>
+          
+          {showTests && (
+          <div className='students-tests'>
+            {grades.map((score, index) => (
+              <span className='students-grade' key={index}>
+                Test {index+1}: &nbsp;&nbsp; {score + "%"}
+              </span>
+            ))}
+          </div>)}     
+
           <AddTag />
         </div>
         
@@ -34,15 +44,7 @@ function Student({ firstName, lastName, company, email, pic, skill, grades }) {
         )}  
       </div>  
 
-        {showTests && (
-        <div className='students-tests'>
-          {grades.map((score, index) => (
-            <span className='students-grade' key={index}>
-              Test {index+1}: &nbsp;&nbsp; {score + "%"}
-            </span>
-          ))}
-        </div>
-      )}     
+        
     </div>
   )
 }
