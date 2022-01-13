@@ -1,8 +1,8 @@
 .student {
-  display: flex;
+  display: grid;
   width: 100%;
   border-bottom: 1px solid rgb(179, 179, 179);
-  display: flex;
+  grid-template-columns: 13rem 1fr 1fr;
   align-items: center;
 }
 
@@ -36,4 +36,20 @@
 .student-details > span {
   font-size: 1.1rem;
   color: grey;
+}
+
+.button {
+  font-size: 5rem;
+  border: none;
+  color: grey;
+  background-color: transparent;
+  cursor: pointer;
+  margin-right: .5rem;
+}
+
+.btn-container {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
 }

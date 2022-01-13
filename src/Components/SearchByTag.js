@@ -5,7 +5,7 @@ function SearchByTag({ students, setStudents }) {
   const [string, setString] = useState('')
 
   const filterByTag = (value) => {
-
+  
   }
   return (
     <div className='search-by-tag'>      

@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import './Student.css';
 
 function Student({ firstName, lastName, company, email, pic, skill, grades }) {
+  const [showTests, setShowTests] = useState(false);
+
   return (
     <div data-testid='student' className='student'>
       <div data-testid='pic' className='student-pic'>
@@ -20,7 +23,16 @@ function Student({ firstName, lastName, company, email, pic, skill, grades }) {
         </div>
         
       </div>
-        
+      
+      <div className='btn-container'>
+        {!showTests ? (
+          <button className='button'>&#43;</button> 
+        ) : (
+          <button className='button'>−</button>
+        )}  
+      </div>
+
+  
     </div>
   )
 }
