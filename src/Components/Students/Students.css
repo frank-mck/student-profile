@@ -28,3 +28,21 @@
   justify-content: center;
   width: 860px;
 }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(207, 207, 207);
+  font-family: sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

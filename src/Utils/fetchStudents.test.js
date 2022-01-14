@@ -1,5 +1,6 @@
 import { waitFor, render } from '@testing-library/react';
 import axios from 'axios';
+import { RecoilRoot } from 'recoil';
 import Students from '../Components/Students/Students';
 
 jest.mock("axios");
@@ -9,7 +10,7 @@ describe("fetchStudents", () => {
 
     test("Makes a call to the students api", async () => {    
       axios.get.mockResolvedValueOnce({ data: []})
-      render(<Students />)
+      render(<RecoilRoot><Students /></RecoilRoot>)
       
       await waitFor(() => {
         expect(axios.get).toHaveBeenCalledWith(BASE_URL);

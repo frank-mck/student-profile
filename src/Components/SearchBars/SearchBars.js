@@ -8,25 +8,25 @@ function SearchBars({ setStudents, students }) {
   const tagState = useRecoilValue(tagsState);
   const [filter, setFilter] = useState(['', ''])
 
-  const filterByName = (value) => {
+  const filterPreferences = (value) => {
     setFilter(value)
-    studentsRef.current.push(students);
+    studentsRef.current.length < 1 && studentsRef.current.push(students);
 
     const val = (str) => str?.toUpperCase().startsWith(value[0]?.toUpperCase());
 
-      const nameFilter = studentsRef.current[0].filter(student => {  
-        let firstName = student.firstName;
-        let tagFound = tagState.find(tag => tag[firstName]?.startsWith(value[1]));
-        let foundStudent = val(student.firstName) || val(student.lastName);
+    const nameFilter = studentsRef.current[0].filter(student => {  
+      let { firstName } = student;
+      let tagFound = tagState.find(tag => tag[firstName]?.startsWith(value[1]));
+      let foundStudent = val(student.firstName) || val(student.lastName);
 
-        if (value[0] && value[1]) {
-          return tagFound && foundStudent ? true : false;
-        } else if (value[0] && !value[1]) {
-          return foundStudent ? true : false;
-        } else if (value[1] && !value[0]) {
-          return tagFound ? true : false;
-        }
-      });
+      if (value[0] && value[1]) {
+        return tagFound && foundStudent ? true : false;
+      } else if (value[0] && !value[1]) {
+        return foundStudent ? true : false;
+      } else if (value[1] && !value[0]) {
+        return tagFound;
+      }
+    });
 
     value[0] || value[1] ? setStudents([...nameFilter]) : setStudents(studentsRef.current[0]);
   }
@@ -39,7 +39,7 @@ function SearchBars({ setStudents, students }) {
           className="name-input"
           type='text'
           value={filter[0] || ''}
-          onChange={(e) => filterByName([e.target.value, filter[1]])}
+          onChange={(e) => filterPreferences([e.target.value, filter[1]])}
           placeholder='Search by name'
         />
       </div>
@@ -51,7 +51,7 @@ function SearchBars({ setStudents, students }) {
           value={filter[1] || ''}
           type='text'  
           placeholder='Search by tag'
-          onChange={(e) => filterByName([filter[0], e.target.value])}
+          onChange={(e) => filterPreferences([filter[0], e.target.value])}
         />
       </div>
     </div>

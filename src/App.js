@@ -1,11 +1,14 @@
+import { RecoilRoot } from 'recoil';
 import './App.css';
-import TopTrumps from './Components/Students/Students';
-
+import Students from './Components/Students/Students';
 
 function App() {
   return (
     <div className="App" data-testid='app'>
-      <TopTrumps />
+      <RecoilRoot>
+        <Students />
+      </RecoilRoot>
+      
     </div>
   );
 }
