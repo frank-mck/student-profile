@@ -23,4 +23,8 @@
   position: fixed;
   z-index: 5;
   background-color: white;
+  border-radius: .5rem;
+  display: flex;
+  justify-content: center;
+  width: 860px;
 }

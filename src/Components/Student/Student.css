@@ -8,7 +8,7 @@
 
 .student-pic {
   border-radius: 100px;
-  border: 2px solid rgb(179, 179, 179);
+  border: 1px solid rgb(100, 100, 100);
   height: 150px;
   width: 150px;
   display: flex;
@@ -36,7 +36,7 @@
 
 .student-details > span {
   font-size: 1.1rem;
-  color: grey;
+  color: black;
 }
 
 .button {
@@ -68,7 +68,7 @@
 
 .students-grade {
   font-size: 1.1rem;
-  color: grey;
+  color: black;
   display: flex;
   flex-direction: column;
   gap: .2rem;
