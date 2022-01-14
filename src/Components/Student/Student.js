@@ -21,7 +21,7 @@ function Student({ firstName, lastName, company, email, pic, skill, grades }) {
           <span data-testid='average'>Average: {" "}
             {grades?.reduce((grade, i) => grade = parseFloat(grade) + parseFloat(i)) / grades?.length}{'%'}
           </span>
-          
+
           {showTests && (
           <div className='students-tests'>
             {grades.map((score, index) => (
@@ -31,7 +31,7 @@ function Student({ firstName, lastName, company, email, pic, skill, grades }) {
             ))}
           </div>)}     
 
-          <AddTag />
+          <AddTag firstName={firstName} />
         </div>
         
       </div>

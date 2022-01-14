@@ -1,20 +1,17 @@
 import { useRef, useState } from "react";
+import { useRecoilState } from "recoil";
+import { tagsState } from "../atoms/tagsState";
 
 function SearchByTag({ students, setStudents }) {
   const studentsByTagRef = useRef(students);
-  const [string, setString] = useState('')
+  const [string, setString] = useState('');
+  const [studentsByTag, setStudentsByTag] = useState([])
+  const [tagState, setTagState] = useRecoilState(tagsState);
 
-  const filterByTag = (value) => {
-    setString(value)
-    studentsByTagRef.current.push(students);
-    const val = (str) => str?.toUpperCase().startsWith(value.toUpperCase());
-
-    const filtered = studentsByTagRef.current[0].filter(student => {  
-      return val(student.firstName) || val(student.lastName);
-    });
-
-    value ? setStudents([...filtered]) : setStudents(studentsByTagRef.current[0]);
+  const filterByTag = () => {
+    
   }
+  
   return (
     <div className='search-by-tag'>      
       <input

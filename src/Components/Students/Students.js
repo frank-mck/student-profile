@@ -14,7 +14,7 @@ function Students() {
       setStudents(res.students);
     }   
     getData();      
-    }, []);
+    }, [setStudents]);
 
   return (
     <div data-testid='students' className='students-container'>

@@ -1,24 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { tagsState } from "../../atoms/tagsState";
 import './AddTag.css'
 
-function AddTag() {
+function AddTag({ firstName }) {
   const [tag, setTag] = useState('');
-  const [tags, setTags] = useRecoilState(tagsState);
+  const [tagState, setTagState] = useRecoilState(tagsState);
   
   const addTags = (e) => {
     e.preventDefault();
-    setTags([...tags, tag]);
+    let name = {}
+    name[firstName] = tag;
+    setTagState([...tagState, name]);    
     setTag('');
   }
 
   return (
     <div>
       <div className="tags">
-        {tags.map((tag, index) => (
-          <div key={index} className="tag">{tag}</div>
-        ))}
+        {tagState.map((tag, index) => {
+          return tag[firstName] && (
+            <div key={index} className="tag">{tag[firstName]}</div>
+          )          
+          })}
       </div>
 
       <form onSubmit={addTags} >
