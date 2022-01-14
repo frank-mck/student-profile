@@ -25,7 +25,7 @@ function Student({ firstName, lastName, company, email, pic, skill, grades }) {
           {showTests && (
           <div className='students-tests'>
             {grades.map((score, index) => (
-              <span className='students-grade' key={index}>
+              <span className='students-grade' key={index * 1000}>
                 Test {index+1}: &nbsp;&nbsp; {score + "%"}
               </span>
             ))}

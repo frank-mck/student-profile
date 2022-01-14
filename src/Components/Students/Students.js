@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import fetchStudents from "../../Utils/fetchStudents";
-import SearchByName from "../SearchByName/SearchByName";
-import SearchByTag from "../SearchByTag";
+import SearchBars from "../SearchBars/SearchBars";
 import Student from "../Student/Student";
 import './Students.css'
 
@@ -20,8 +19,7 @@ function Students() {
     <div data-testid='students' className='students-container'>
 
       <div className="search-inputs-container">
-        <SearchByName setStudents={setStudents} students={students} />
-        <SearchByTag setStudents={setStudents} students={students} />
+        <SearchBars setStudents={setStudents} students={students} />
       </div>      
 
       <div className="students">
