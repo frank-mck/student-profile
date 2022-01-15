@@ -14,7 +14,7 @@ function SearchBars({ setStudents, students }) {
 
     const val = (str) => str?.toUpperCase().startsWith(value[0]?.toUpperCase());
 
-    const nameFilter = studentsRef.current[0].filter(student => {  
+    const filterStudents = studentsRef.current[0].filter(student => {  
       let { firstName } = student;
       let tagFound = tagState.find(tag => tag[firstName]?.startsWith(value[1]));
       let foundStudent = val(student.firstName) || val(student.lastName);
@@ -28,7 +28,7 @@ function SearchBars({ setStudents, students }) {
       }
     });
 
-    value[0] || value[1] ? setStudents([...nameFilter]) : setStudents(studentsRef.current[0]);
+    value[0] || value[1] ? setStudents([...filterStudents]) : setStudents(studentsRef.current[0]);
   }
 
   return (

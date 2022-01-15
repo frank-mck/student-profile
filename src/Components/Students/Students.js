@@ -23,22 +23,22 @@ function Students() {
       </div>      
 
       <div className="students">
-      {students?.map(student => {
-        const { id, firstName, lastName, company, email, pic, skill, grades } = student; 
+        {students?.map(student => {
+          const { id, firstName, lastName, company, email, pic, skill, grades } = student; 
 
-        return (
-          <Student 
-            key={id}
-            firstName={firstName}
-            lastName={lastName}
-            company={company}
-            email={email}
-            pic={pic}
-            skill={skill}
-            grades={grades}
-          />
+          return (
+            <Student 
+              key={id}
+              firstName={firstName}
+              lastName={lastName}
+              company={company}
+              email={email}
+              pic={pic}
+              skill={skill}
+              grades={grades}
+            />
+          )}
         )}
-      )}
       </div>
     </div>
   )
