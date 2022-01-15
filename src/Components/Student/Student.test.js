@@ -73,7 +73,11 @@ test('renders a students skill', () => {
 });
 
 test('renders a students average', () => {
-  render(<RecoilRoot><Student /></RecoilRoot>);
+  const grades = [1, 2, 3, 4];
+  render(<RecoilRoot><Student grades={grades} /></RecoilRoot>);
+  const btn = getByTestId(document.documentElement, 'btn');
+  fireEvent.click(btn);
   const students = getByTestId(document.documentElement, 'average');
-  expect(students).toBeInTheDocument()
+  expect(students).toBeInTheDocument();
+  expect(students).toHaveTextContent('2.5%')
 });

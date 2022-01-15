@@ -14,7 +14,7 @@ function AddTag({ firstName }) {
     setTagState([...tagState, name]);    
     setTag('');
   }
-console.log(tagState, firstName)
+
   return (
     <div>
       <div data-testid='tags' className="tags">
