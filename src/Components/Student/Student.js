@@ -23,7 +23,7 @@ function Student({ firstName, lastName, company, email, pic, skill, grades }) {
           </span>
 
           {showTests && (
-          <div className='students-tests'>
+          <div data-testid='tests' className='students-tests'>
             {grades.map((score, index) => (
               <span className='students-grade' key={index * 1000}>
                 Test {index+1}: &nbsp;&nbsp; {score + "%"}
@@ -38,9 +38,17 @@ function Student({ firstName, lastName, company, email, pic, skill, grades }) {
       
       <div className='btn-container'>
         {!showTests ? (
-          <button onClick={() => setShowTests(true)} className='button'>&#43;</button> 
+          <button
+            data-testid='btn'
+            onClick={() => setShowTests(true)}
+            className='button'
+          >&#43;</button> 
         ) : (
-          <button onClick={() => setShowTests(false)} className='button'>−</button>
+          <button 
+            data-testid='btn' 
+            onClick={() => setShowTests(false)} 
+            className='button'          
+          >−</button>
         )}  
       </div>  
 
