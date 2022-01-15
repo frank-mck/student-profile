@@ -32,6 +32,8 @@ function SearchBars({ setStudents, students }) {
         return foundStudent ? true : false;
       } else if (nameAndTag[1] && !nameAndTag[0]) {
         return tagFound;
+      } else {
+        return true
       }
     });
 
