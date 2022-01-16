@@ -1,5 +1,4 @@
 import { fireEvent, getByTestId, render, screen } from '@testing-library/react';
-import Students from '../Students/Students';
 import { RecoilRoot } from 'recoil'
 import SearchBars from './SearchBars';
 

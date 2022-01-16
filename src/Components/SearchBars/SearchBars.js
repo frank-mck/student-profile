@@ -8,37 +8,37 @@ function SearchBars({ setStudents, students }) {
   const tagState = useRecoilValue(tagsState);
   const [preferences, setPreferences] = useState(['', ''])
 
-  const filterPreferences = (nameAndTag) => {
-    const allStudents = studentsRef.current[0];
-    setPreferences(nameAndTag);
-
+  const filterPreferences = (nameAndTagInput) => {
     // save a reference of all students if none
     studentsRef.current.length < 1 && studentsRef.current.push(students);
 
+    const allStudents = studentsRef.current[0];
+    setPreferences(nameAndTagInput);
+    const { 0: findName, 1: findTag } = nameAndTagInput;
+
     // Search if students full name starts with the name typed
-    const searchByName = (str) => str?.toUpperCase().startsWith(nameAndTag[0]?.toUpperCase());
+    const searchByName = (str) => str?.toUpperCase().startsWith(findName?.toUpperCase());
 
     // filter by name and tag
     const filterStudents = allStudents.filter(student => {  
       let { firstName, lastName } = student;
       
       // returns true if a student is found with the tag typed
-      let tagFound = tagState.find(tag => tag[firstName]?.startsWith(nameAndTag[1]));
+      let tagFound = tagState.find(tag => tag[firstName]?.startsWith(findTag));
       let foundStudent = searchByName(firstName) || searchByName(lastName);
 
-      if (nameAndTag[0] && nameAndTag[1]) {
+      if (findName && findTag) {
         return tagFound && foundStudent ? true : false;
-      } else if (nameAndTag[0] && !nameAndTag[1]) {
+      } else if (findName && !findTag) {
         return foundStudent ? true : false;
-      } else if (nameAndTag[1] && !nameAndTag[0]) {
+      } else if (findTag && !findName) {
         return tagFound;
       } else {
-        return true
+        return true;
       }
     });
 
-    // if there is a value in any input field then set the filtered students otherwise set all student from the reference
-    nameAndTag[0] || nameAndTag[1] ? setStudents([...filterStudents]) : setStudents(allStudents);
+    setStudents([...filterStudents]);
   }
 
   return (
