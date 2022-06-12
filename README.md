@@ -18,6 +18,7 @@ cd student-profile-3556
 npm install
 npm start
 ```
+open [localhost:3000](http://localhost:3000/)
 
 Run tests
 
