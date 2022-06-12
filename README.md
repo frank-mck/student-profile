@@ -13,14 +13,16 @@ Deployed here https://students-directory.netlify.app/
 ## How to use
 
 ```
-git clone 
-cd 
+git clone https://github.com/frank-mck/student-profile-3556.git
+cd student-profile-3556
+npm install
+npm start
 ```
 
 Run tests
 
 ``` 
-
+npm run test
 ```
 
 Have fun!! :)
