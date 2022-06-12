@@ -13,8 +13,8 @@ Deployed here https://students-directory.netlify.app/
 ## How to use
 
 ```
-git clone https://github.com/frank-mck/student-profile-3556.git
-cd student-profile-3556
+git clone https://github.com/frank-mck/student-profile.git
+cd student-profile
 npm install
 npm start
 ```
