@@ -32,7 +32,7 @@
   align-items: flex-start;
   padding-left: 1rem;
   gap: .2rem;
-  margin-bottom: 1rem;
+  margin-bottom: .8rem;
   transition: all .1s ease-in-out;
 }
 
@@ -95,11 +95,11 @@
   border-bottom: 2px solid rgb(0, 0, 0);
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
   .student {
-    width: 30rem;
+    width: 26rem;
     display: grid;
-    grid-template-columns: 8rem 18rem 1fr;
+    grid-template-columns: 7rem 15rem 4rem;
     grid-template-rows: 1fr ;
   }
 
@@ -109,6 +109,7 @@
 
   .students-tests {
     height: 120px;
+    margin-bottom: .5rem;
   }
 
   .add-tag-input {
@@ -116,7 +117,7 @@
   }
 
   .student-pic, .student-pic img {
-    height: 90px;
-    width: 90px;
+    height: 75px;
+    width: 75px;
   }
 }
