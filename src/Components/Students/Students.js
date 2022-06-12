@@ -9,8 +9,13 @@ function Students() {
 
   useEffect(() => {
     const getData = async () => {
-      const res = await fetchStudents();
-      setStudents(res.students);
+      try {
+        const res = await fetchStudents();
+        setStudents(res.students);
+      } catch(error) {
+        console.log(error)
+      }
+     
     }   
     getData();      
     }, [setStudents]);

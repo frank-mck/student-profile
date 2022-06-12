@@ -19,3 +19,13 @@
   border-bottom: 2px solid black;
 }
 
+@media only screen and (max-width: 700px) {
+  .name-input, .tag-input {
+    width: 30rem;
+    font-size: 1.2rem;
+  }
+
+  .search-by-name, .search-by-tag {
+    margin-bottom: 0;
+  }
+}

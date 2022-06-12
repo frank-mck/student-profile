@@ -4,6 +4,7 @@
   border-bottom: 1px solid rgb(179, 179, 179);
   grid-template-columns: 13rem 1fr 1fr;
   grid-template-rows: 1fr ;
+  transition: all .1s ease-in-out;
 }
 
 .student-pic {
@@ -16,7 +17,7 @@
   justify-content: center;
   overflow: hidden;
   margin: 1.5rem;
-  
+  transition: all .1s ease-in-out;
 }
 
 .student-pic img {
@@ -32,11 +33,16 @@
   padding-left: 1rem;
   gap: .2rem;
   margin-bottom: 1rem;
+  transition: all .1s ease-in-out;
 }
 
 .student-details > span {
   font-size: 1.1rem;
   color: black;
+}
+
+.student__name {
+  font-size: 1.3rem
 }
 
 .button {
@@ -87,4 +93,30 @@
 
 .add-tag-input:focus {  
   border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 700px) {
+  .student {
+    width: 30rem;
+    display: grid;
+    grid-template-columns: 8rem 18rem 1fr;
+    grid-template-rows: 1fr ;
+  }
+
+  .student-details > span, .students-grade {
+    font-size: .9rem;
+  }
+
+  .students-tests {
+    height: 120px;
+  }
+
+  .add-tag-input {
+    font-size: .9rem;
+  }
+
+  .student-pic, .student-pic img {
+    height: 90px;
+    width: 90px;
+  }
 }

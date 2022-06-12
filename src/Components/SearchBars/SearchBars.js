@@ -9,21 +9,16 @@ function SearchBars({ setStudents, students }) {
   const [preferences, setPreferences] = useState(['', ''])
 
   const filterPreferences = (nameAndTagInput) => {
-    // save a reference of all students if none
     studentsRef.current.length < 1 && studentsRef.current.push(students);
 
     const allStudents = studentsRef.current[0];
     setPreferences(nameAndTagInput);
     const { 0: findName, 1: findTag } = nameAndTagInput;
 
-    // Search if students full name starts with the name typed
     const searchByName = (str) => str?.toUpperCase().startsWith(findName?.toUpperCase());
 
-    // filter by name and tag
     const filterStudents = allStudents.filter(student => {  
       let { firstName, lastName } = student;
-      
-      // returns true if a student is found with the tag typed
       let tagFound = tagState.find(tag => tag[firstName]?.startsWith(findTag));
       let foundStudent = searchByName(firstName) || searchByName(lastName);
 
