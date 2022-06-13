@@ -26,6 +26,12 @@
     padding: .8rem;
   }
 
+  .name-input:focus, .tag-input:focus {
+    position: absolute;
+    margin-top: 10rem;
+    background-color: rgb(223, 223, 223);
+  }
+
   .search-by-name, .search-by-tag {
     margin-bottom: 0;
   }

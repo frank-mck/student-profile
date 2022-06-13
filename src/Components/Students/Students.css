@@ -35,6 +35,10 @@
   .students-container, .students, .search-inputs-container {
     width: 26rem;
   }
+
+  .students-container {
+    height: 100vh;
+  }
   
   .students {
     margin-top: 7rem;
